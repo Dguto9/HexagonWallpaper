@@ -50,6 +50,8 @@ var custom_color_changing_old = 1.0;
 var custom_color_fixed_hue;
 var custom_color_fixed_sat;
 var custom_spawn_origin = 1;
+var custom_spawn_x = 50;
+var custom_spawn_y = 50;
 var custom_use_careful_calc = false;
 var custom_use_lines = false;
 var custom_use_sparkles = false;
@@ -167,6 +169,12 @@ window.wallpaperPropertyListener = {
 	applyUserProperties: function (properties) {
 		if (properties.custom_spawn_origin) {
 			custom_spawn_origin = properties.custom_spawn_origin.value;
+		}
+		if (properties.custom_spawn_x){
+			custom_spawn_x = properties.custom_spawn_x;
+		}
+		if (properties.custom_spawn_y){
+			custom_spawn_y = properties.custom_spawn_y;
 		}
 		if (properties.custom_use_lines) {
 			custom_use_lines = properties.custom_use_lines.value;
@@ -433,6 +441,9 @@ Line.prototype.reset = function (mode) {
 		}
 		rel_x = (random_spawn_x - opts.cx) / hex_side_length;
 		rel_y = (random_spawn_y - opts.cy) / hex_side_length;
+	case 4:
+		rel_x = ((w/custom_spawn_x) - opts.cx) / hex_side_length;
+		rel_y = ((h/custom_spawn_y) - opts.cy) / hex_side_length;
 	}
 
 	this.origin_x = rel_x;

@@ -153,6 +153,10 @@
                     {
                         "label": "ui_custom_spawn_origin_random",
                         "value": 3
+                    },
+                    {
+                        "label": "ui_custom_spawn_origin_set",
+                        "value": 4
                     }
                 ],
                 "order": 1,
@@ -160,6 +164,32 @@
                 "type": "combo",
                 "value": 1
             },
+            "custom_spawn_x" : {
+				"condition" : "custom_spawn_origin.value == 4",
+				"fraction" : true,
+				"index" : 2,
+				"max" : 100,
+				"min" : 0,
+				"order" : 102,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "ui_custom_spawn_x",
+				"type" : "slider",
+				"value" : 50
+			},
+			"custom_spawn_y" : {
+				"condition" : "custom_spawn_origin.value == 4",
+				"fraction" : true,
+				"index" : 3,
+				"max" : 100,
+				"min" : 0,
+				"order" : 103,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "ui_custom_spawn_y",
+				"type" : "slider",
+				"value" : 50
+			},
             "custom_speed_factor": {
                 "max": 150,
                 "min": 60,
@@ -254,6 +284,7 @@
                 "ui_custom_spawn_origin_cursor": "Cursor",
                 "ui_custom_spawn_origin_middle": "Middle",
                 "ui_custom_spawn_origin_random": "Random",
+                "ui_custom_spawn_origin_set": "X and Y",
                 "ui_custom_speed_factor": "Light propagating speed %",
                 "ui_custom_use_background_image": "Use custom background image",
                 "ui_custom_use_careful_calc": "Use careful calculation",
